@@ -1,0 +1,12 @@
+node_modules/
+.env
+*.mp4
+*.mp3
+*.webm
+*.m4a
+downloads/
+.DS_Store
+npm-debug.log
+cookies.txt
+cookies.json
+attached_assets/

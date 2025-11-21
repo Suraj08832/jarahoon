@@ -1,0 +1,17 @@
+name = "youtube-telegram-bot"
+main = "cloudflare/worker.js"
+compatibility_date = "2024-11-01"
+
+[observability]
+enabled = true
+
+# Environment variables (add these in Cloudflare Dashboard using: wrangler secret put SECRET_NAME)
+# Required secrets:
+# - BOT_TOKEN (Telegram bot token)
+# - MAIN_SERVER_URL (Your Replit URL, e.g., https://your-repl.repl.co)
+
+# Bindings
+# Add KV namespace for caching (optional)
+# [[kv_namespaces]]
+# binding = "CACHE"
+# id = "your_kv_namespace_id"

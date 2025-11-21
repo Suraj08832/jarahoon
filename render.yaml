@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: youtube-telegram-bot-api
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: bash build.sh
+    startCommand: node index.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: BOT_TOKEN
+        sync: false
+      - key: AUDIO_CHANNEL_ID
+        sync: false
+      - key: VIDEO_CHANNEL_ID
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: OWNER_ID
+        sync: false
+    healthCheckPath: /health
+    autoDeploy: true

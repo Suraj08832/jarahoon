@@ -1,0 +1,39 @@
+{
+  "name": "YouTube Telegram Bot",
+  "description": "Telegram bot that downloads YouTube videos and serves them via API",
+  "repository": "https://github.com/yourusername/youtube-telegram-bot",
+  "logo": "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/telegram.svg",
+  "keywords": ["telegram", "youtube", "bot", "nodejs", "mongodb"],
+  "stack": "container",
+  "env": {
+    "BOT_TOKEN": {
+      "description": "Telegram bot token from @BotFather",
+      "required": true
+    },
+    "OWNER_ID": {
+      "description": "Telegram user ID of the bot owner",
+      "required": true
+    },
+    "AUDIO_CHANNEL_ID": {
+      "description": "Telegram channel ID for audio storage",
+      "required": true
+    },
+    "VIDEO_CHANNEL_ID": {
+      "description": "Telegram channel ID for video storage",
+      "required": true
+    },
+    "MONGODB_URI": {
+      "description": "MongoDB connection string (use MongoDB Atlas)",
+      "required": true
+    },
+    "YOUTUBE_API_KEY": {
+      "description": "YouTube Data API v3 key for song search",
+      "required": true
+    },
+    "PORT": {
+      "description": "Port for API server",
+      "value": "5000",
+      "required": false
+    }
+  }
+}

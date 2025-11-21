@@ -1,0 +1,47 @@
+modules = ["nodejs-20", "bash"]
+[agent]
+expertMode = true
+
+[nix]
+channel = "stable-25_05"
+packages = ["ffmpeg", "ffmpeg-full", "yt-dlp"]
+
+[workflows]
+runButton = "Project"
+
+[[workflows.workflow]]
+name = "Project"
+mode = "parallel"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "workflow.run"
+args = "YouTube Telegram Bot"
+
+[[workflows.workflow]]
+name = "YouTube Telegram Bot"
+author = "agent"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node index.js"
+waitForPort = 5000
+
+[workflows.workflow.metadata]
+outputType = "webview"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[[ports]]
+localPort = 33111
+externalPort = 3000
+
+[[ports]]
+localPort = 45909
+externalPort = 3001
+
+[[ports]]
+localPort = 46083
+externalPort = 3002
